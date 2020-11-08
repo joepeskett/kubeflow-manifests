@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../../manifests/jupyter/jupyter-web-app/base_v3
+images:
+- name: gcr.io/kubeflow-images-public/jupyter-web-app
+  newName: gcr.io/private-repo/jupyter-web-app
+  newTag: a-new-image-tag-in-qa

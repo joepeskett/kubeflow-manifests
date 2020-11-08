@@ -5,7 +5,7 @@ hydrate:
 		mkdir -p ./build/
 		#Build Jupyter Web App
 		mkdir -p ./build/jupyter-web-app
-		kustomize build --load_restrictor none -o ./build/jupyter-web-app ./overlays/jupyter-web-app
+		kustomize build --load_restrictor none -o ./build/jupyter-web-app ./overlays/$(ENV)/jupyter-web-app
 		#Build Notebook controller
 		mkdir -p ./build/notebook-controller
 		kustomize build --load_restrictor none -o ./build/notebook-controller ./manifests/jupyter/notebook-controller/base_v3
